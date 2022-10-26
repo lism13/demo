@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        #player {
+            width: 250px;
+        }
+
+        ​
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>CrossSpeech Demo</title>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+            crossorigin="anonymous"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Fonts CSS-->
+    <link rel="stylesheet" href="css/heading.css">
+    <link rel="stylesheet" href="css/body.css">
+    <!-- Bootstrap slider CSS -->
+    <!-- <link rel="stylesheet" href="css/bootstrap-slider.css"> -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css"
+          integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ=="
+          crossorigin="anonymous"/>
+    <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+</head>
+<body id="page-top">
+<nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Audio demos</a>
+<button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#disentanglement">DISENTANGLEMENT</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audio-cross">CROSS-LINGUAL</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audio-intra">INTRA-LINGUAL</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation">ABLATION STUDY</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+<header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading mb-0">CROSSSPEECH: SPEAKER-INDEPENDENT ACOUSTIC REPRESENTATION FOR CROSS-LINGUAL SPEECH SYNTHESIS</h1>
+        <p></p>
+        <!-- Masthead Subheading-->
+        <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Ji-Hoon Kim, Hong-Sun Yang, Yoon-Cheol Ju, Il-Hwan Kim, Byeong-Yeol Kim</p>
+    </div>
+</header>
+
+<!-- Abstraction -->
+<section class="page-section portfolio" id="abstract">
+    <div class="container">
+        <!-- Portfolio Section Heading-->
+        <div class="text-center">
+            <h2 class="page-section-heading text-secondary mb-0 d-inline-block">ABSTRACT</h2>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom"></div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center">
+            <div class="col-lg-12 ml-auto">
+                <p class="pre-wrap lead">While recent text-to-speech (TTS) systems have made remarkable strides toward human-level quality, the performance of cross-lingual TTS lags behind that of intra-lingual TTS. This gap is mainly rooted from the speaker-language entanglement problem in cross-lingual TTS. In this paper, we propose CrossSpeech which improves the quality of cross-lingual speech by effectively disentangling speaker and language information in the resolution of acoustic feature space. Specifically, CrossSpeech decomposes the speech generation pipeline into the speaker-independent generator (SIG) and speaker-dependent generator (SDG). The SIG produces the speaker-independent acoustic representation which is not biased to specific speaker distribution. On the other hand, the SDG models speaker-dependent speech variation that characterizes speaker attributes. By handling each information separately, CrossSpeech can obtain disentangled speaker and language representations. From the experiments, we verify that CrossSpeech achieves significant improvements in cross-lingual TTS, especially in terms of speaker similarity to the target speaker.</p>
+
+            </div>
+        </div>
+        <br>
+    </div>
+    <div style="align-content: center" class="container">
+        <p class="pre-wrap lead" >The source code will be released at <a href="crossspeech.github.com" style="font-weight:bold; color: -webkit-link; cursor: pointer; text-decoration: underline">here.</a></p>
+    </div>
+</section>
+
+
+<section class="page-section bg-primary text-white mb-0" id="disentanglement">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="page-section-heading d-inline-block">DISENTANGLEMENT</h2> <br><br><br>
+            <h5>We synthesized the speech from English texts with speakers in each language <br>(i.e. English, Chinese, Korean).<br><br></h5>
+        </div>
+        <div class="divider-custom divider-light">
+            <div class="row">
+                <div class="col-12"> <span class="font-weight-bold" style="font-size: large">Choose speakers:&nbsp;</span>
+        <button type="button" class="btn-lg btn-secondary" onclick="toggle_en()">English speakers</button>
+        <button type="button" class="btn-lg btn-success" onclick="toggle_cn()">Chinese speakers</button>
+        <button type="button" class="btn-lg btn-danger" onclick="toggle_ko()">Korean speakers</button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <h4 id="disentangle_spk">English speakers</h4> <br><br>
+            <div class="row">
+                <div class="col-lg-12 ml-auto">
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="3" style="width: 40%"> <div class="text-left">Script:<i> In being comparatively modern.</i></div></th>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;">
+                                <div class="align-content-centern text-center font-weight-bold"><p>Speaker-independent representation</p></div>
+                                <div class="row">
+                                    <div class="text-center col-lg-12">
+                                        <img src="./imgs/disentangle/en_indep.png" id="img_indep" width="500">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                            <div class="align-content-centern text-center font-weight-bold"><p>Speaker-dependent representation</p></div>
+                            <div class="row">
+                                    <div class="text-center col-lg-12">
+                                        <img src="./imgs/disentangle/en_dep.png" id="img_dep" width="500">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="align-content-centern text-center font-weight-bold"><p>The final output</p></div>
+                            <div class="row">
+                                    <div class="text-center col-lg-12">
+                                        <img src="./imgs/disentangle/en_final.png" id="img_final" width="500">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="text-center col-lg-12">
+                                        <br/>
+                                        <audio controls="controls" src="./audio/disentangle/en_indep.wav" id="audio_indep" type="audio/wav">
+                                        </audio>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="text-center col-lg-12">
+                                        <br/>
+                                        <audio controls="controls" src="./audio/disentangle/en_dep.wav" id="audio_dep" type="audio/wav">
+                                        </audio>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="text-center col-lg-12">
+                                        <br/>
+                                        <audio controls="controls" src="./audio/disentangle/en_final.wav" id="audio_final" type="audio/wav"></audio>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                    </table>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="3" style="width: 40%"> <div class="text-left">Script:<i> Has never been surpassed.</i></div></th>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;">
+                                <div class="align-content-centern text-center font-weight-bold"><p>Speaker-independent representation</p></div>
+                                <div class="row">
+                                    <div class="text-center col-lg-12">
+                                        <img src="./imgs/disentangle/en_indep2.png" id="img_indep2" width="500">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                            <div class="align-content-centern text-center font-weight-bold"><p>Speaker-dependent representation</p></div>
+                            <div class="row">
+                                    <div class="text-center col-lg-12">
+                                        <img src="./imgs/disentangle/en_dep2.png" id="img_dep2" width="500">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="align-content-centern text-center font-weight-bold"><p>The final output</p></div>
+                            <div class="row">
+                                    <div class="text-center col-lg-12">
+                                        <img src="./imgs/disentangle/en_final2.png" id="img_final2" width="500">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="text-center col-lg-12">
+                                        <br/>
+                                        <audio controls="controls" src="./audio/disentangle/en_indep2.wav" id="audio_indep2" type="audio/wav">
+                                        </audio>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="text-center col-lg-12">
+                                        <br/>
+                                        <audio controls="controls" src="./audio/disentangle/en_dep2.wav" id="audio_dep2" type="audio/wav">
+                                        </audio>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="text-center col-lg-12">
+                                        <br/>
+                                        <audio controls="controls" src="./audio/disentangle/en_final2.wav" id="audio_final2" type="audio/wav"></audio>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="page-section bg-info text-white mb-0" id="audio-cross">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="page-section-heading d-inline-block">Audio samples</h2>
+        </div>
+
+        <div class="divider-custom divider-light">
+            <div class="divider-custom"></div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <!-- About Section Content-->
+            <div class="row">
+                <div class="col-lg-12 ml-auto">
+                    <div class="text-left">
+                        <h3>Cross-lingual</h3>
+                        <p style="font-size: large">English text + Chinese speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td colspan="5" style="vertical-align: top"><p>Target speaker</p>
+                            <audio controls>
+                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top;"><p>Faspitch</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>Y. Zhang <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio  controls>
+                                        <source src="./audio/ablation/en_1_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>D. Xin <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_2_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>SANE-TTS</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p><b>CrossSpeech</b></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">English text + Korean speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td colspan="5" style="vertical-align: top"><p>Target speaker</p>
+                            <audio controls>
+                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top;"><p>Faspitch</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>Y. Zhang <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio  controls>
+                                        <source src="./audio/ablation/en_1_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>D. Xin <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_2_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>SANE-TTS</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p><b>CrossSpeech</b></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">Chinese text + English speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td colspan="5" style="vertical-align: top"><p>Target speaker</p>
+                            <audio controls>
+                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top;"><p>Faspitch</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>Y. Zhang <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio  controls>
+                                        <source src="./audio/ablation/en_1_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>D. Xin <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_2_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>SANE-TTS</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p><b>CrossSpeech</b></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">Chinese text + Korean speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td colspan="5" style="vertical-align: top"><p>Target speaker</p>
+                            <audio controls>
+                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top;"><p>Faspitch</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>Y. Zhang <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio  controls>
+                                        <source src="./audio/ablation/en_1_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>D. Xin <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_2_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>SANE-TTS</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p><b>CrossSpeech</b></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">Korean text + English speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> 더불어 아일랜드 사회의 변화의 흐름이 이어졌다.</i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td colspan="5" style="vertical-align: top"><p>Target speaker</p>
+                            <audio controls>
+                                        <source src="./audio/compare/cross/krtxt/enspk_target.wav" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top;"><p>Faspitch</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/compare/cross/krtxt/enspk_fp.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>Y. Zhang <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio  controls>
+                                        <source src="./audio/compare/cross/krtxt/enspk_dann.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>D. Xin <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/compare/cross/krtxt/enspk_mi.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>SANE-TTS</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/compare/cross/krtxt/enspk_sane.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p><b>CrossSpeech</b></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/compare/cross/krtxt/enspk_crossspeech.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">Korean text + Chinese speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> 그를 둘러싼 흥미진진한 베일이 곧 걷혀질 참이다.</i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td colspan="5" style="vertical-align: top"><p>Target speaker</p>
+                            <audio controls>
+                                        <source src="./audio/compare/cross/krtxt/cnspk_target.wav" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top;"><p>Faspitch</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/compare/cross/krtxt/cnspk_fp.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>Y. Zhang <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio  controls>
+                                        <source src="./audio/compare/cross/krtxt/cnspk_dann.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>D. Xin <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/compare/cross/krtxt/cnspk_mi.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>SANE-TTS</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/compare/cross/krtxt/cnspk_sane.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p><b>CrossSpeech</b></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/compare/cross/krtxt/cnspk_crossspeech.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+
+                    <div class="text-left">
+                        <br><br><h3 id="audio-intra">Intra-lingual</h3>
+                        <p style="font-size: large">English text + English speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td  style="vertical-align: top;"><p>Ground truth</p>
+                                <audio controls>
+                                    <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                </audio>
+                            </td>
+                            <td  colspan="4" style="vertical-align: top;"><p>Vocoded</p>
+                                <audio controls>
+                                    <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top;"><p>Faspitch</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>Y. Zhang <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio  controls>
+                                        <source src="./audio/ablation/en_1_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>D. Xin <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_2_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>SANE-TTS</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p><b>CrossSpeech</b></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">Chinese text + Chinese speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td  style="vertical-align: top;"><p>Ground truth</p>
+                                <audio controls>
+                                    <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                </audio>
+                            </td>
+                            <td  colspan="4" style="vertical-align: top;"><p>Vocoded</p>
+                                <audio controls>
+                                    <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top;"><p>Faspitch</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>Y. Zhang <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio  controls>
+                                        <source src="./audio/ablation/en_1_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>D. Xin <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_2_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>SANE-TTS</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p><b>CrossSpeech</b></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">Korean text + Korean speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> 씻어 건져낸다.</i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td  style="vertical-align: top;"><p>Ground truth</p>
+                                <audio controls>
+                                    <source src="./audio/compare/intra/krtxt/gt.wav" type="audio/wav" />
+                                </audio>
+                            </td>
+                            <td  colspan="4" style="vertical-align: top;"><p>Vocoded</p>
+                                <audio controls>
+                                    <source src="./audio/compare/intra/krtxt/vocoded.wav" type="audio/wav" />
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top;"><p>Faspitch</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/compare/intra/krtxt/fp.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>Y. Zhang <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio  controls>
+                                        <source src="./audio/compare/intra/krtxt/dann.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>D. Xin <i>et al.</i></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/compare/intra/krtxt/mi.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p>SANE-TTS</p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/compare/intra/krtxt/sane.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;"><p><b>CrossSpeech</b></p>
+                                <div class="text-center">
+                                    <audio controls>
+                                        <source src="./audio/compare/intra/krtxt/crossspeech.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section bg-primary text-white mb-0" id="ablation">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="page-section-heading d-inline-block">ABLATION STUDY</h2>
+        </div>
+
+        <div class="divider-custom divider-light">
+            <div class="divider-custom"></div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <!-- About Section Content-->
+            <div class="row">
+                <div class="col-lg-12 ml-auto">
+                    <div class="text-left">
+                        <h3>Cross-lingual</h3>
+                        <p style="font-size: large">English text + Chinese speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top"><p><b>CrossSpeech</b></p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> M-DSLN </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> $\mathcal{L}_{sgr}$</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: top"><p><em>w/o</em> SIP </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> SDP</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> Res</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">English text + Korean speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top"><p><b>CrossSpeech</b></p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> M-DSLN </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> $\mathcal{L}_{sgr}$</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: top"><p><em>w/o</em> SIP </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> SDP</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> Res</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">Chinese text + English speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top"><p><b>CrossSpeech</b></p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> M-DSLN </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> $\mathcal{L}_{sgr}$</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: top"><p><em>w/o</em> SIP </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> SDP</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> Res</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">Chinese text + Korean speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top"><p><b>CrossSpeech</b></p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> M-DSLN </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> $\mathcal{L}_{sgr}$</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: top"><p><em>w/o</em> SIP </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> SDP</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> Res</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">Korean text + English speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top"><p><b>CrossSpeech</b></p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> M-DSLN </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> $\mathcal{L}_{sgr}$</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: top"><p><em>w/o</em> SIP </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> SDP</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> Res</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">Korean text + Chinese speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top"><p><b>CrossSpeech</b></p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> M-DSLN </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> $\mathcal{L}_{sgr}$</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: top"><p><em>w/o</em> SIP </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> SDP</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> Res</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><br><h3>Intra-lingual</h3>
+                        <p style="font-size: large">English text + English speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top"><p><b>CrossSpeech</b></p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> M-DSLN </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> $\mathcal{L}_{sgr}$</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: top"><p><em>w/o</em> SIP </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> SDP</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> Res</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">Chinese text + Chinese speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top"><p><b>CrossSpeech</b></p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> M-DSLN </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> $\mathcal{L}_{sgr}$</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: top"><p><em>w/o</em> SIP </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> SDP</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> Res</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="text-left">
+                        <br><p style="font-size: large">Korean text + Korean speaker</p>
+                    </div>
+                    <table class="table table-responsive align-content-center"
+                           style="background-color: whitesmoke; border-radius: 20px">
+                        <tr>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top"><p><b>CrossSpeech</b></p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> M-DSLN </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> $\mathcal{L}_{sgr}$</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: top"><p><em>w/o</em> SIP </p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> SDP</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                            <td style="vertical-align: top"><p><em>w/o</em> Res</p>
+                            <audio controls>
+                                        <source src="" type="audio/wav" />
+                            </audio>
+                            </td>
+                        </tr>
+
+                    </table>
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded"
+                                                       href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+<script src="js/scripts.js"></script>
+<!-- Bootstrap slider JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"
+        integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA=="
+        crossorigin="anonymous"></script>
+<!-- slider JS -->
+<script type="text/javascript"></script>
+
+
+
+<!-- slider JS -->
+<script type="text/javascript">
+    function zeroPad(nr, base) {
+        var len = (String(base).length - String(nr).length) + 1;
+        return len > 0 ? new Array(len).join('0') + nr : nr;
+    }
+
+    function audio_reload(id) {
+        intensity = zeroPad(Number($("#intensity"+id).val()) * 10, 10);
+
+        var img_name = "./assets/img/intensity/" + id + '/' + intensity + ".png";
+        var audio_name = "./audio/intensity/" + id + '/' + intensity + ".wav";
+
+        console.log(intensity)
+        // console.log(audio_name)
+
+        $('#img_src'+id).attr("src", img_name);
+        $('#audio_src'+id).attr("src", audio_name);
+
+        //console.log($('#audio_src').val());
+        //console.log($("#audio_panel"))
+        $('#audio_panel'+id)[0].load();
+
+    };
+    $(function () {
+
+        $('#intensity0').slider({
+            formatter: function (value) {
+                return value;
+            }
+        });
+
+//slider:ready slider:changed
+        // 슬라이더에서 선택한 값을 출력하는 부분
+        $('#intensity0').on("slide changed", function () {
+            audio_reload("0")
+        });
+        $('#intensity0').on("slide down", function () {
+            audio_reload("0")
+        });
+
+    });
+
+    $(function () {
+
+        $('#intensity1').slider({
+            formatter: function (value) {
+                return value;
+            }
+        });
+        $('#intensity1').on("slide changed", function () {
+            audio_reload("1")
+        });
+        $('#intensity1').on("slide down", function () {
+            audio_reload("1")
+        });
+
+    });
+
+
+    $(function () {
+
+        $('#intensity2').slider({
+            formatter: function (value) {
+                return value;
+            }
+        });
+        $('#intensity2').on("slide changed", function () {
+            audio_reload("2")
+        });
+        $('#intensity2').on("slide down", function () {
+            audio_reload("2")
+        });
+
+    });
+
+    $(function () {
+
+        $('#intensity3').slider({
+            formatter: function (value) {
+                return value;
+            }
+        });
+        $('#intensity3').on("slide changed", function () {
+            audio_reload("3")
+        });
+        $('#intensity3').on("slide down", function () {
+            audio_reload("3")
+        });
+
+    });
+
+//    change image & audio
+    function toggle_en() {
+        document.getElementById("disentangle_spk").innerText = "English speakers";
+
+        document.getElementById("img_indep").src = "./imgs/disentangle/en_indep.png";
+        document.getElementById("img_dep").src = "./imgs/disentangle/en_dep.png";
+        document.getElementById("img_final").src = "./imgs/disentangle/en_final.png";
+        document.getElementById("audio_indep").src = "./audio/disentangle/en_indep.wav";
+        document.getElementById("audio_dep").src = "./audio/disentangle/en_dep.wav";
+        document.getElementById("audio_final").src = "./audio/disentangle/en_final.wav";
+
+        document.getElementById("img_indep2").src = "./imgs/disentangle/en_indep2.png";
+        document.getElementById("img_dep2").src = "./imgs/disentangle/en_dep2.png";
+        document.getElementById("img_final2").src = "./imgs/disentangle/en_final2.png";
+        document.getElementById("audio_indep2").src = "./audio/disentangle/en_indep2.wav";
+        document.getElementById("audio_dep2").src = "./audio/disentangle/en_dep2.wav";
+        document.getElementById("audio_final2").src = "./audio/disentangle/en_final2.wav";
+    }
+
+    function toggle_cn() {
+        document.getElementById("disentangle_spk").innerText = "Chinese speakers";
+
+        document.getElementById("img_indep").src = "./imgs/disentangle/cn_indep.png";
+        document.getElementById("img_dep").src = "./imgs/disentangle/cn_dep.png";
+        document.getElementById("img_final").src = "./imgs/disentangle/cn_final.png";
+        document.getElementById("audio_indep").src = "./audio/disentangle/cn_indep.wav";
+        document.getElementById("audio_dep").src = "./audio/disentangle/cn_dep.wav";
+        document.getElementById("audio_final").src = "./audio/disentangle/cn_final.wav";
+
+        document.getElementById("img_indep2").src = "./imgs/disentangle/cn_indep2.png";
+        document.getElementById("img_dep2").src = "./imgs/disentangle/cn_dep2.png";
+        document.getElementById("img_final2").src = "./imgs/disentangle/cn_final2.png";
+        document.getElementById("audio_indep2").src = "./audio/disentangle/cn_indep2.wav";
+        document.getElementById("audio_dep2").src = "./audio/disentangle/cn_dep2.wav";
+        document.getElementById("audio_final2").src = "./audio/disentangle/cn_final2.wav";
+
+
+
+    }
+
+    function toggle_ko() {
+        document.getElementById("disentangle_spk").innerText = "Korean speakers";
+
+        document.getElementById("img_indep").src = "./imgs/disentangle/ko_indep.png";
+        document.getElementById("img_dep").src = "./imgs/disentangle/ko_dep.png";
+        document.getElementById("img_final").src = "./imgs/disentangle/ko_final.png";
+        document.getElementById("audio_indep").src = "./audio/disentangle/ko_indep.wav";
+        document.getElementById("audio_dep").src = "./audio/disentangle/ko_dep.wav";
+        document.getElementById("audio_final").src = "./audio/disentangle/ko_final.wav";
+
+        document.getElementById("img_indep2").src = "./imgs/disentangle/ko_indep2.png";
+        document.getElementById("img_dep2").src = "./imgs/disentangle/ko_dep2.png";
+        document.getElementById("img_final2").src = "./imgs/disentangle/ko_final2.png";
+        document.getElementById("audio_indep2").src = "./audio/disentangle/ko_indep2.wav";
+        document.getElementById("audio_dep2").src = "./audio/disentangle/ko_dep2.wav";
+        document.getElementById("audio_final2").src = "./audio/disentangle/ko_final2.wav";
+
+    }
+</script>
+
+
+
+</body>
+</html>
