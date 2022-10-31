@@ -58,7 +58,7 @@
 <body id="page-top">
 <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
             <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Audio demos</a>
-<button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+<button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
@@ -94,14 +94,13 @@
         <!-- Portfolio Grid Items-->
         <div class="row justify-content-center">
             <div class="col-lg-12 ml-auto">
-                <p class="pre-wrap lead">While recent text-to-speech (TTS) systems have made remarkable strides toward human-level quality, the performance of cross-lingual TTS lags behind that of intra-lingual TTS. This gap is mainly rooted from the speaker-language entanglement problem in cross-lingual TTS. In this paper, we propose CrossSpeech which improves the quality of cross-lingual speech by effectively disentangling speaker and language information in the resolution of acoustic feature space. Specifically, CrossSpeech decomposes the speech generation pipeline into the speaker-independent generator (SIG) and speaker-dependent generator (SDG). The SIG produces the speaker-independent acoustic representation which is not biased to specific speaker distribution. On the other hand, the SDG models speaker-dependent speech variation that characterizes speaker attributes. By handling each information separately, CrossSpeech can obtain disentangled speaker and language representations. From the experiments, we verify that CrossSpeech achieves significant improvements in cross-lingual TTS, especially in terms of speaker similarity to the target speaker.</p>
-
+                <p class="pre-wrap lead">While recent text-to-speech (TTS) systems have made remarkable strides toward human-level quality, the performance of cross-lingual TTS lags behind that of intra-lingual TTS. This gap is mainly rooted from the speaker-language entanglement problem in cross-lingual TTS. In this paper, we propose CrossSpeech which improves the quality of cross-lingual speech by effectively disentangling speaker and language information in the level of acoustic feature space. Specifically, CrossSpeech decomposes the speech generation pipeline into the speaker-independent generator (SIG) and speaker-dependent generator (SDG). The SIG produces the speaker-independent acoustic representation which is not biased to specific speaker distributions. On the other hand, the SDG models speaker-dependent speech variation that characterizes speaker attributes. By handling each information separately, CrossSpeech can obtain disentangled speaker and language representations. From the experiments, we verify that CrossSpeech achieves significant improvements in cross-lingual TTS, especially in terms of speaker similarity to the target speaker.</p>
             </div>
         </div>
         <br>
     </div>
     <div style="align-content: center" class="container">
-        <p class="pre-wrap lead" >The source code will be released at <a href="crossspeech.github.com" style="font-weight:bold; color: -webkit-link; cursor: pointer; text-decoration: underline">here.</a></p>
+        <p class="pre-wrap lead" >The source code will be released at <a href="https://github.com/lism13/CrossSpeech" style="font-weight:bold; color: -webkit-link; cursor: pointer; text-decoration: underline">here.</a></p>
     </div>
 </section>
 
@@ -393,13 +392,13 @@
                     <table class="table table-responsive align-content-center"
                            style="background-color: whitesmoke; border-radius: 20px">
                         <tr>
-                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> 下午三点钟，“考生”们各就各位后，接听正式开始。</i></div></th>
                             </th>
                         </tr>
                         <tr>
                             <td colspan="5" style="vertical-align: top"><p>Target speaker</p>
                             <audio controls>
-                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/cross/cntxt/enspk_target.wav" type="audio/wav" />
                             </audio>
                             </td>
                         </tr>
@@ -407,35 +406,35 @@
                             <td style="vertical-align: top;"><p>FastPitch</p>
                                 <div class="text-center">
                                     <audio controls>
-                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/cross/cntxt/enspk_fp.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
                             <td style="vertical-align: top;"><p>Y. Zhang <i>et al.</i></p>
                                 <div class="text-center">
                                     <audio  controls>
-                                        <source src="./audio/ablation/en_1_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/cross/cntxt/enspk_dann.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
                             <td style="vertical-align: top;"><p>D. Xin <i>et al.</i></p>
                                 <div class="text-center">
                                     <audio controls>
-                                        <source src="./audio/ablation/en_2_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/cross/cntxt/enspk_mi.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
                             <td style="vertical-align: top;"><p>SANE-TTS</p>
                                 <div class="text-center">
                                     <audio controls>
-                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/cross/cntxt/enspk_sane.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
                             <td style="vertical-align: top;"><p><b>CrossSpeech</b></p>
                                 <div class="text-center">
                                     <audio controls>
-                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/cross/cntxt/enspk_crossspeech.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
@@ -449,13 +448,13 @@
                     <table class="table table-responsive align-content-center"
                            style="background-color: whitesmoke; border-radius: 20px">
                         <tr>
-                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> 我就跑啊，往山东跑，往新疆跑。</i></div></th>
                             </th>
                         </tr>
                         <tr>
                             <td colspan="5" style="vertical-align: top"><p>Target speaker</p>
                             <audio controls>
-                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/cross/cntxt/krspk_target.wav" type="audio/wav" />
                             </audio>
                             </td>
                         </tr>
@@ -463,35 +462,35 @@
                             <td style="vertical-align: top;"><p>FastPitch</p>
                                 <div class="text-center">
                                     <audio controls>
-                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/cross/cntxt/krspk_fp.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
                             <td style="vertical-align: top;"><p>Y. Zhang <i>et al.</i></p>
                                 <div class="text-center">
                                     <audio  controls>
-                                        <source src="./audio/ablation/en_1_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/cross/cntxt/krspk_dann.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
                             <td style="vertical-align: top;"><p>D. Xin <i>et al.</i></p>
                                 <div class="text-center">
                                     <audio controls>
-                                        <source src="./audio/ablation/en_2_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/cross/cntxt/krspk_mi.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
                             <td style="vertical-align: top;"><p>SANE-TTS</p>
                                 <div class="text-center">
                                     <audio controls>
-                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/cross/cntxt/krspk_sane.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
                             <td style="vertical-align: top;"><p><b>CrossSpeech</b></p>
                                 <div class="text-center">
                                     <audio controls>
-                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/cross/cntxt/krspk_crossspeech.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
@@ -680,18 +679,18 @@
                     <table class="table table-responsive align-content-center"
                            style="background-color: whitesmoke; border-radius: 20px">
                         <tr>
-                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            <th colspan="5" style="width: 40%"> <div class="text-left">Script:<i> 几周后，贝蒂确诊患有乳腺癌。</i></div></th>
                             </th>
                         </tr>
                         <tr>
                             <td  style="vertical-align: top;"><p>Ground truth</p>
                                 <audio controls>
-                                    <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                    <source src="./audio/compare/intra/cntxt/gt.wav" type="audio/wav" />
                                 </audio>
                             </td>
                             <td  colspan="4" style="vertical-align: top;"><p>Vocoded</p>
                                 <audio controls>
-                                    <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                    <source src="./audio/compare/intra/cntxt/vocoded.wav" type="audio/wav" />
                                 </audio>
                             </td>
                         </tr>
@@ -699,35 +698,35 @@
                             <td style="vertical-align: top;"><p>FastPitch</p>
                                 <div class="text-center">
                                     <audio controls>
-                                        <source src="./audio/ablation/en_0_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/intra/cntxt/fp.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
                             <td style="vertical-align: top;"><p>Y. Zhang <i>et al.</i></p>
                                 <div class="text-center">
                                     <audio  controls>
-                                        <source src="./audio/ablation/en_1_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/intra/cntxt/dann.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
                             <td style="vertical-align: top;"><p>D. Xin <i>et al.</i></p>
                                 <div class="text-center">
                                     <audio controls>
-                                        <source src="./audio/ablation/en_2_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/intra/cntxt/mi.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
                             <td style="vertical-align: top;"><p>SANE-TTS</p>
                                 <div class="text-center">
                                     <audio controls>
-                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/intra/cntxt/sane.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
                             <td style="vertical-align: top;"><p><b>CrossSpeech</b></p>
                                 <div class="text-center">
                                     <audio controls>
-                                        <source src="./audio/ablation/en_3_12.wav" type="audio/wav" />
+                                        <source src="./audio/compare/intra/cntxt/crossspeech.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                             </td>
@@ -930,47 +929,47 @@
                     <table class="table table-responsive align-content-center"
                            style="background-color: whitesmoke; border-radius: 20px">
                         <tr>
-                            <th colspan="3" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            <th colspan="3" style="width: 40%"> <div class="text-left">Script:<i> 纸巾纸一般具有湿韧强度。</i></div></th>
                             </th>
                         </tr>
                         <tr>
                             <td colspan="3" style="vertical-align: top"><p>Target speaker</p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/enspk_target.wav" type="audio/wav" />
                             </audio>
                             </td>
                         </tr>
                         <tr>
                             <td style="vertical-align: top"><p><b>CrossSpeech</b></p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/enspk_crossspeech.wav" type="audio/wav" />
                             </audio>
                             </td>
                             <td style="vertical-align: top"><p><em>w/o</em> M-DSLN </p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/enspk_mdsln.wav" type="audio/wav" />
                             </audio>
                             </td>
                             <td style="vertical-align: top"><p><em>w/o</em> $\mathcal{L}_{sgr}$</p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/enspk_sgr.wav" type="audio/wav" />
                             </audio>
                             </td>
                         </tr>
                         <tr>
                            <td style="vertical-align: top"><p><em>w/o</em> SIP </p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/enspk_sip.wav" type="audio/wav" />
                             </audio>
                             </td>
                             <td style="vertical-align: top"><p><em>w/o</em> SDP</p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/enspk_sdp.wav" type="audio/wav" />
                             </audio>
                             </td>
                             <td style="vertical-align: top"><p><em>w/o</em> Res</p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/enspk_res.wav" type="audio/wav" />
                             </audio>
                             </td>
                         </tr>
@@ -983,47 +982,47 @@
                     <table class="table table-responsive align-content-center"
                            style="background-color: whitesmoke; border-radius: 20px">
                         <tr>
-                            <th colspan="3" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            <th colspan="3" style="width: 40%"> <div class="text-left">Script:<i> 山头叫包家岩。</i></div></th>
                             </th>
                         </tr>
                         <tr>
                             <td colspan="3" style="vertical-align: top"><p>Target speaker</p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/krspk_target.wav" type="audio/wav" />
                             </audio>
                             </td>
                         </tr>
                         <tr>
                             <td style="vertical-align: top"><p><b>CrossSpeech</b></p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/krspk_crossspeech.wav" type="audio/wav" />
                             </audio>
                             </td>
                             <td style="vertical-align: top"><p><em>w/o</em> M-DSLN </p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/krspk_mdsln.wav" type="audio/wav" />
                             </audio>
                             </td>
                             <td style="vertical-align: top"><p><em>w/o</em> $\mathcal{L}_{sgr}$</p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/krspk_sgr.wav" type="audio/wav" />
                             </audio>
                             </td>
                         </tr>
                         <tr>
                            <td style="vertical-align: top"><p><em>w/o</em> SIP </p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/krspk_sip.wav" type="audio/wav" />
                             </audio>
                             </td>
                             <td style="vertical-align: top"><p><em>w/o</em> SDP</p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/krspk_sdp.wav" type="audio/wav" />
                             </audio>
                             </td>
                             <td style="vertical-align: top"><p><em>w/o</em> Res</p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/cross/cntxt/krspk_res.wav" type="audio/wav" />
                             </audio>
                             </td>
                         </tr>
@@ -1196,47 +1195,47 @@
                     <table class="table table-responsive align-content-center"
                            style="background-color: whitesmoke; border-radius: 20px">
                         <tr>
-                            <th colspan="3" style="width: 40%"> <div class="text-left">Script:<i> </i></div></th>
+                            <th colspan="3" style="width: 40%"> <div class="text-left">Script:<i> 下了车，杨花扑面，脸上痒痒的。</i></div></th>
                             </th>
                         </tr>
                         <tr>
                             <td colspan="3" style="vertical-align: top"><p>Ground truth</p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/intra/cntxt/gt.wav" type="audio/wav" />
                             </audio>
                             </td>
                         </tr>
                         <tr>
                             <td style="vertical-align: top"><p><b>CrossSpeech</b></p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/intra/cntxt/crossspeech.wav" type="audio/wav" />
                             </audio>
                             </td>
                             <td style="vertical-align: top"><p><em>w/o</em> M-DSLN </p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/intra/cntxt/mdsln.wav" type="audio/wav" />
                             </audio>
                             </td>
                             <td style="vertical-align: top"><p><em>w/o</em> $\mathcal{L}_{sgr}$</p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/intra/cntxt/sgr.wav" type="audio/wav" />
                             </audio>
                             </td>
                         </tr>
                         <tr>
                            <td style="vertical-align: top"><p><em>w/o</em> SIP </p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/intra/cntxt/sip.wav" type="audio/wav" />
                             </audio>
                             </td>
                             <td style="vertical-align: top"><p><em>w/o</em> SDP</p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/intra/cntxt/sdp.wav" type="audio/wav" />
                             </audio>
                             </td>
                             <td style="vertical-align: top"><p><em>w/o</em> Res</p>
                             <audio controls>
-                                        <source src="" type="audio/wav" />
+                                        <source src="./audio/ablation/intra/cntxt/res.wav" type="audio/wav" />
                             </audio>
                             </td>
                         </tr>
